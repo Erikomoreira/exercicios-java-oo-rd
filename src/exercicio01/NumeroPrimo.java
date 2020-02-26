@@ -1,6 +1,7 @@
 package exercicio01;
 
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class NumeroPrimo {
@@ -19,8 +20,28 @@ public class NumeroPrimo {
      * @return Set<Integer>
      */
     public Set<Integer> getNumerosPrimosDe(Set<Integer> numeros) {
-        // TODO: implemente o código deste método
-        return null;
+
+        SortedSet<Integer> primos = new TreeSet<>();
+
+        for (Integer i: numeros) {
+
+            if(validarPrimo(i) && i != 1) {
+                primos.add(i);
+
+            }
+
+        }
+
+
+        return primos;
     }
 
+
+    private static boolean validarPrimo(int numero) {
+        for (int i = 2; i < numero; i++) {
+            if (numero % i == 0)
+                return false;
+        }
+        return true;
+    }
 }

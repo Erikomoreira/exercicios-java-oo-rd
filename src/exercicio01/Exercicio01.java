@@ -1,6 +1,7 @@
 package exercicio01;
 
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Exercicio01 {
@@ -27,7 +28,15 @@ public class Exercicio01 {
      * @return Set<Integer>
      */
     private static Set<Integer> getSetDe(int[] numeros) {
-        // TODO: implemente o código deste método
-        return null;
+
+        SortedSet<Integer> conjunto = new TreeSet<>();
+
+        for(int i = 0; i < numeros.length; i++){
+
+            conjunto.add(numeros[i]);
+
+        }
+
+        return conjunto;
     }
 }
